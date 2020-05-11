@@ -25,5 +25,8 @@ paint.setStyle(Paint.Style.STROKE);
 paint.setStrokeWidth(20);
 canvas.drawCircle(300, 300, 200, paint);
 
+        paint.setColor(Color.BLUE);
+        paint.setStyle(Paint.Style.FILL);
+        canvas.drawRect(600, 600, 900, 900, paint);
     }
 }
