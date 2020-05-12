@@ -17,16 +17,31 @@ public class MyView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         Paint paint = new Paint();
+        int y = 0;
+        paint.setStrokeWidth(10);
+        paint.setColor(Color.GREEN);
+        while (y < canvas.getHeight()) {
+            canvas.drawLine(0, y,
+                    this.getWidth(), y, paint);
+            y += 80;
+        }
+        int x = 0;
+        paint.setColor(Color.MAGENTA);
+        while (x < canvas.getWidth()) {
+            canvas.drawLine(0, y,
+                    this.getHeight(), x, paint);
+            x += 500;
+        }
         paint.setColor(Color.YELLOW);
-paint.setStyle(Paint.Style.FILL_AND_STROKE);
-canvas.drawCircle(300, 300, 200, paint);
-paint.setColor(Color.RED);
-paint.setStyle(Paint.Style.STROKE);
-paint.setStrokeWidth(20);
-canvas.drawCircle(300, 300, 200, paint);
-
+        paint.setStyle(Paint.Style.FILL_AND_STROKE);
+        canvas.drawCircle(300, 300, 200, paint);
+        paint.setColor(Color.RED);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(20);
+        canvas.drawCircle(300, 300, 200, paint);
         paint.setColor(Color.BLUE);
         paint.setStyle(Paint.Style.FILL);
-        canvas.drawRect(600, 600, 900, 900, paint);
+        canvas.drawRect(300, 600, 900, 1200, paint);
+
     }
 }
